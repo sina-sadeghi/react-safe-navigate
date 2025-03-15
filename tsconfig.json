@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "module": "Node16",
+    "target": "ES6",
+    "jsx": "react-jsx",
+    "declaration": true,
+    "moduleResolution": "node16",
+    "strict": true,
+    "esModuleInterop": true
+  },
+  "include": ["src"]
+}
