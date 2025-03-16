@@ -4,7 +4,7 @@ import { IFullRoute, primitiveType } from './router';
 /**
  * Custom hook for navigation using named routes.
  *
- * @returns {Object} An object containing the `navigate` function.
+ * @returns {Function} A function to navigate to a given route with optional parameters and options.
  */
 export function useCustomNavigate() {
     const navigateFn = useNavigate();
