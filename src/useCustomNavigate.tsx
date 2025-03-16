@@ -16,13 +16,11 @@ export function useCustomNavigate() {
      * @param {Record<string, primitiveType>} [params] - Dynamic parameters for route generation.
      * @param {NavigateOptions} [options] - Additional navigation options.
      */
-    const navigate = (
+    return (
         route: IFullRoute,
         params?: Record<string, primitiveType>,
         options?: NavigateOptions
     ) => {
         navigateFn(generatePath(route.__fullRoute, params), options);
     };
-
-    return { navigate };
 }
