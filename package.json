@@ -27,10 +27,14 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
     "react-router": "^7.3.0",
     "react-router-dom": "^7.3.0"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0 <20.0.0",
+    "react-dom": ">=18.0.0 <20.0.0",
+    "react-router": ">=6.0.0 <8.0.0",
+    "react-router-dom": ">=6.0.0 <8.0.0"
   },
   "devDependencies": {
     "@types/react": "^19.0.10",
