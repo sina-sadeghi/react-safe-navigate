@@ -47,11 +47,11 @@ export const ROUTES = [
 In your app entry file, define the main router and route converter once and use them throughout the project:
 
 ```tsx
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, RouteObject } from "react-router-dom";
 import { convertRouter } from "react-safe-navigate";
 import { ROUTES } from "./routes";
 
-export const router = createBrowserRouter<typeof ROUTES>(ROUTES);
+const router = createBrowserRouter(ROUTERS as unknown as RouteObject[]);
 export const typedRoutes = convertRouter<typeof ROUTES>(ROUTES);
 ```
 
@@ -81,27 +81,33 @@ import { useCustomNavigate } from "react-safe-navigate";
 import { typedRoutes } from "./routerSetup";
 
 const MyComponent = () => {
-  const { navigate } = useCustomNavigate();
+    const navigate = useCustomNavigate();
 
-  return (
-    <button onClick={() => navigate(typedRoutes["/"]["company/:id"], { id: 15 })}>
-      Go to Chat
-    </button>
-  );
+    const handleGoToCompany = () => {
+        navigate(typedRoutes["/"]["company/:id"], { id: 15 });
+    };
+
+    return (
+        <button onClick={handleGoToCompany}>
+            Go to Company 15
+        </button>
+    );
 };
+
+export default MyComponent;
 ```
 
 ---
 
 ## 🔧 API
 
-### `convertRouter<T>(routes: T) => T`
+#### `convertRouter<T>(routes: T) => T`
 Converts and ensures type-safe route navigation.
 
-### `useCustomNavigate()`
+#### `useCustomNavigate()`
 A hook that provides safe navigation without worrying about non-existent paths.
 
-### `<CustomLink to={typedRoutes["/"]["some-path"]} values={{ id: 123 }}>`
+#### `<CustomLink to={typedRoutes["/"]["some-path"]} values={{ id: 123 }}>`
 A component that safely links to a typed route.
 
 ---
