@@ -13,7 +13,7 @@ export interface IFullRoute {
 /**
  * Represents a JSX element.
  */
-interface JSXElement extends React.ReactElement<any, any> {}
+export interface JSXElement extends React.ReactElement<any, any> {}
 
 /**
  * Defines the structure of route configurations.
