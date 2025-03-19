@@ -51,7 +51,7 @@ import { createBrowserRouter, RouteObject } from "react-router-dom";
 import { convertRouter } from "react-safe-navigate";
 import { ROUTES } from "./routes";
 
-const router = createBrowserRouter(ROUTERS as unknown as RouteObject[]);
+const router = createBrowserRouter(ROUTES as unknown as RouteObject[]);
 export const typedRoutes = convertRouter<typeof ROUTES>(ROUTES);
 ```
 
